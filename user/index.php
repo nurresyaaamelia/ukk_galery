@@ -111,7 +111,7 @@ if ($data_user) {
               <li><a class="dropdown-item" href="../config/aksi_logout.php">Keluar</a></li>
               <!-- Ini adalah opsi untuk laporan -->
             </ul>
-          </div </div>
+          </div> </div>
         </div>
       </div>
   </nav>

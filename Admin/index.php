@@ -96,16 +96,16 @@ if ($data_user) {
 
       <div class="navbar-nav ms-auto">
         <!-- Tambahkan dropdown untuk nama pengguna -->
-   <div class="dropdown">
-    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fas fa-user"></i> <?php echo $username; ?>
-    </button>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-        <li><a class="dropdown-item" href="../config/aksi_logout.php">Keluar</a></li>
-        <li><a class="dropdown-item" href="laporan.php">Laporan</a></li>
-        <li><a class="dropdown-item" href="user.php">Data User</a></li> <!-- Ini adalah opsi untuk laporan -->
-    </ul>
-</div
+        <div class="dropdown">
+          <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-user"></i> <?php echo $username; ?>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="../config/aksi_logout.php">Keluar</a></li>
+              <li><a class="dropdown-item" href="laporan.php">Laporan</a></li>
+              <li><a class="dropdown-item" href="user.php">Data User</a></li> <!-- Ini adalah opsi untuk laporan -->
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -224,13 +224,13 @@ if ($data_user) {
      <div style="display: flex; ">
         <strong><?php echo $row['NamaLengkap'] ?></strong>
         <p style="margin-left: 5px;"><?php echo $row['isikomentar'] ?></p>
-        <?php if ($row['userID'] == $userID) { ?>
+        
             <form action="../config/proses_hapus_komentar.php" method="POST" style="margin-left: auto;">
                 <input type="hidden" name="id" value="<?php echo $row['komentarid'] ?>">
                 <input type="hidden" name="fotoid" value="<?php echo $data['fotoid'] ?>">
                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus komentar ini?')">Hapus</button>
             </form>
-        <?php } ?>
+        
     </div>
 <?php } ?>
 

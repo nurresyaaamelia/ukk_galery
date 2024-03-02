@@ -17,7 +17,7 @@ $fotoid = $_POST['fotoid'];
 $userID = $_SESSION['userID'];
 
 // Hapus komentar dari database
-$query = mysqli_query($koneksi, "DELETE FROM komentar WHERE komentarid='$id' AND userID='$userID'");
+$query = mysqli_query($koneksi, "DELETE FROM komentar WHERE komentarid='$id' ");
 
 if ($query) {
     header("Location: {$_SERVER['HTTP_REFERER']}");

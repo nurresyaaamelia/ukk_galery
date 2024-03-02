@@ -44,7 +44,7 @@ $result = mysqli_query($koneksi, "SELECT * FROM user");
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse mt-2" id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse mt-2"  id="navbarNavAltMarkup">
       <div class="navbar-nav me-auto">
         <a href="home.php" class="btn btn-outline-primary">Home</a>
         <span style="margin-right: 10px;"></span> <!-- Jarak -->
@@ -55,18 +55,19 @@ $result = mysqli_query($koneksi, "SELECT * FROM user");
       </div>
 
       <div class="navbar-nav ms-auto">
-        <!-- Tambahkan dropdown untuk nama pengguna -->
-<div class="dropdown">
-    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fas fa-user"></i> <?php echo $username; ?>
-    </button>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-        <li><a class="dropdown-item" href="../config/aksi_logout.php">Keluar</a></li>
-        <li><a class="dropdown-item" href="laporan.php">Laporan</a></li>
-        <li><a class="dropdown-item" href="user.php">Data User</a></li> <!-- Ini adalah opsi untuk laporan -->
-    </ul>
-</div>
-
+          <!-- Tambahkan dropdown untuk nama pengguna -->
+          <div class="dropdown">
+              <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-user"></i> <?php echo $username; ?>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item" href="../config/aksi_logout.php">Keluar</a></li>
+                  <li><a class="dropdown-item" href="laporan.php">Laporan</a></li>
+                  <li><a class="dropdown-item" href="user.php">Data User</a></li> <!-- Ini adalah opsi untuk laporan -->
+              </ul>
+          </div>
+          
+  
       </div>
     </div>
   </div>

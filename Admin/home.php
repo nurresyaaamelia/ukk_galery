@@ -96,7 +96,7 @@ if ($data_user) {
         <li><a class="dropdown-item" href="laporan.php">Laporan</a></li>
         <li><a class="dropdown-item" href="user.php">Data User</a></li> <!-- Ini adalah opsi untuk laporan -->
     </ul>
-</div
+      </div>
       </div>
     </div>
   </div>
