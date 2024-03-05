@@ -2,6 +2,10 @@
 session_start();
 include 'koneksi.php';
 
+$_SESSION['role'] = 'admin';
+$_SESSION['role'] = 'user';
+
+
 if (isset($_POST['tambah'])) {
     $NamaAlbum = $_POST['namaalbum'];
     $Deskripsi = $_POST['deskripsi'];

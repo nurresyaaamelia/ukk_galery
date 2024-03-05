@@ -104,7 +104,7 @@ if ($data_user) {
         <div class="row">
             <?php
             // Query untuk mendapatkan semua album pengguna
-            $query = mysqli_query($koneksi, "SELECT * FROM album WHERE userID='$userID'");
+            $query = mysqli_query($koneksi, "SELECT * FROM album");
             while ($row = mysqli_fetch_array($query)) {
                 // Ambil data foto pertama dari album
                 $albumID = $row['AlbumID'];
