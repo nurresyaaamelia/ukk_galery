@@ -1,28 +1,32 @@
 **Gallery Foto Website - Readme**
 
 **Deskripsi:**
-Website galeri foto ini bertujuan untuk memudahkan pengguna dalam menelusuri dan menikmati berbagai koleksi foto yang disajikan secara visual menarik. Dengan desain yang ramah pengguna, pengguna dapat dengan mudah menjelajahi koleksi foto, mencari kategori tertentu, dan bahkan berinteraksi dengan foto melalui fitur-fitur yang disediakan.
+Website galeri foto ini adalah sebuah aplikasi web yang memungkinkan pengguna untuk membuat galeri foto pribadi dan berbagi dengan pengguna lainnya. Pengguna dapat melakukan berbagai tindakan seperti menambah foto, membuat album, mengedit, menghapus, melaporkan, berkomentar, menyukai, serta login dan logout.
 
-**Fitur Utama:**
+Fitur
+Tambah Foto: Pengguna dapat menambahkan foto baru ke galeri mereka.
+Tambah Album: Pengguna dapat membuat album baru untuk mengatur foto-foto mereka.
+Edit & Hapus: Pengguna dapat mengedit dan menghapus foto-foto mereka.
+Laporan: Pengguna dapat melaporkan foto yang dianggap tidak pantas atau melanggar kebijakan.
+Komentar: Pengguna dapat memberikan komentar pada foto-foto.
+Like Foto: Pengguna dapat menyukai foto-foto yang mereka suka.
+Login & Logout: Pengguna dapat masuk dan keluar dari akun mereka.
 
-1. **Tampilan Koleksi Foto:** 
-   - Pengguna dapat menelusuri berbagai koleksi foto yang tersedia dalam tampilan grid yang menarik, memberikan pengalaman visual yang memikat.
-   
-2. **Pencarian Berdasarkan Kategori:**
-   - Pengguna dapat mencari foto berdasarkan kategori tertentu seperti tempat, tema, atau jenis foto.
-   
-3. **Fitur Zoom:**
-   - Pengguna dapat memperbesar foto untuk melihat detail dengan lebih jelas menggunakan fitur zoom yang disediakan.
-   
-4. **Pengaturan Tampilan:**
-   - Pengguna dapat mengatur tampilan galeri foto sesuai preferensi mereka, seperti mengubah ukuran tampilan grid atau mengatur urutan tampilan foto.
-   
-5. **Interaksi Sosial:**
-   - Pengguna dapat berbagi foto yang mereka sukai ke media sosial mereka, memungkinkan untuk interaksi lebih lanjut dengan teman-teman mereka.
-   
-6. **Komentar dan Penilaian:**
-   - Pengguna dapat memberikan komentar dan penilaian terhadap foto-foto yang mereka lihat, memungkinkan untuk interaksi komunitas yang lebih besar.
+Teknologi yang Digunakan
+HTML: Untuk struktur dasar halaman web.
+CSS: Untuk styling tampilan halaman web.
+JavaScript: Untuk interaktivitas dalam aplikasi web.
+Bootstrap: Untuk desain responsif dan komponen UI yang mudah digunakan.
 
-**Teknologi yang Digunakan:**
+Instalasi
+Clone repositori ini ke dalam komputer lokal Anda.
+Pastikan Anda memiliki server web yang berjalan (misalnya Apache, Nginx).
+Pindahkan semua file ke dalam direktori root server web Anda.
+Buka aplikasi menggunakan browser favorit Anda.
 
-- **Frontend:** HTML, CSS, JavaScript (mungkin dengan bantuan framework seperti React atau Vue.js)
+Penggunaan
+Buat akun atau masuk jika Anda sudah memiliki akun.
+Tambahkan foto atau buat album baru.
+Anda dapat mengedit, menghapus, atau melaporkan foto dengan mengklik ikon yang sesuai di setiap foto.
+Berikan komentar pada foto dengan mengetik di bidang komentar.
+Anda dapat menyukai foto dengan mengklik ikon hati di setiap foto.
