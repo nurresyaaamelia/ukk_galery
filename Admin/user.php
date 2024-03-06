@@ -78,7 +78,7 @@ $result = mysqli_query($koneksi, "SELECT * FROM user");
                 <table class="table table-striped table-bordered">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">No</th>
                             <th scope="col">Username</th>
                             <th scope="col">Email</th>
                             <th scope="col">Nama Lengkap</th>

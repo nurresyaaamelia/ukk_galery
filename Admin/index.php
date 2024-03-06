@@ -32,6 +32,7 @@ if ($data_user) {
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <style>
+    
    
     .fa-heart {
       
@@ -151,7 +152,7 @@ if ($data_user) {
       <?php endif; ?>
         <div class="col-md-3 mt-2">
           <div class="card mb-2">
-            <img src="../assets/img/<?php echo $data['lokasifile'] ?>" class="card-img-top" title="<?php echo $data['judulfoto'] ?>" style="max-height: 300px;">
+            <img src="../assets/img/<?php echo $data['lokasifile'] ?>" class="card-img-top" title="<?php echo $data['judulfoto'] ?>" style="max-height: 500px;">
             <div class="card-footer text-center">
               <?php
               $fotoid = $data['fotoid'];
@@ -191,10 +192,10 @@ if ($data_user) {
 
                 <div class="modal-body">
                   <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-6">
                       <img src="../assets/img/<?php echo $data['lokasifile'] ?>" class="card-img-top" title="<?php echo $data['judulfoto'] ?>">
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                       <div class="m-2">
                         <div class="overflow-auto">
                           <div class="sticky-top">

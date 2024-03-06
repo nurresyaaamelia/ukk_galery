@@ -155,7 +155,7 @@ if ($data_user) {
     <?php endif; ?>
     <div class="col-md-3 mt-2">
       <div class="card mb-2">
-        <img src="../assets/img/<?php echo $data['lokasifile'] ?>" class="card-img-top" title="<?php echo $data['judulfoto'] ?>" style="max-height: 300px;">
+        <img src="../assets/img/<?php echo $data['lokasifile'] ?>" class="card-img-top" title="<?php echo $data['judulfoto'] ?>" style="max-height: 500px;">
         <div class="card-footer text-center">
          
           <button class="btn -outline-danger" data-bs-toggle="modal" data-bs-target="#laporModal<?php echo $data['fotoid']; ?>">
@@ -223,10 +223,10 @@ if ($data_user) {
 
             <div class="modal-body">
               <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-6">
                   <img src="../assets/img/<?php echo $data['lokasifile'] ?>" class="card-img-top" title="<?php echo $data['judulfoto'] ?>">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <div class="m-2">
                     <div class="overflow-auto">
                       <div class="sticky-top">
