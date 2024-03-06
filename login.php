@@ -39,7 +39,7 @@
                             <input type="password" id="Password" name="Password" class="form-control" required>
                         </div>
                         <div class="d-grid mt-2">
-                <button class="btn btn-primary" type="submit" name="Kirim">Daftar</button>
+                <button class="btn btn-primary" type="submit" name="Kirim">Masuk</button>
               </div>
                     </form>
                     <hr>
