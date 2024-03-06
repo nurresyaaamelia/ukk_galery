@@ -19,9 +19,9 @@ if ($cek > 0) {
 
     // Sesuaikan redirect berdasarkan jenis pengguna
     if ($Username === 'admin') {
-        header("Location: ../admin/index.php");
+        header("Location: ../admin/home.php");
     } else {
-        header("Location: ../user/index.php");
+        header("Location: ../user/home.php");
     }
     exit;
 } else {

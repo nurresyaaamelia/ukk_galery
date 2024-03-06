@@ -73,6 +73,7 @@ $result = mysqli_query($koneksi, "SELECT * FROM user");
   </div>
 </nav>
     <div class="container mt-5">
+    <h2 style="margin-bottom: 50px;">Data User</h2>
         <div class="row">
             <div class="col-md-12">
                 <table class="table table-striped table-bordered">
