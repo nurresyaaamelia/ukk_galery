@@ -108,7 +108,7 @@ if ($data_user) {
                 <?php
                 $no = 1;
                 $userid = $_SESSION['status'];
-                $sql = mysqli_query($koneksi, " SELECT * FROM album ");
+                $sql = mysqli_query($koneksi, " SELECT * FROM album WHERE userID='$userID'");
                 while ($data = mysqli_fetch_array($sql)) {
                 ?>
                   <tr>
