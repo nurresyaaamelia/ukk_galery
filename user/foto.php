@@ -119,7 +119,7 @@ if ($data_user) {
                 <?php
                 $no = 1;
                 $userID = $_SESSION['status'];
-                $sql = mysqli_query($koneksi, "SELECT * FROM foto WHERE userID='$userID'");
+                $sql = mysqli_query($koneksi, "SELECT * FROM foto");
                 while ($data = mysqli_fetch_array($sql)) {
                 ?>
                   <tr>
