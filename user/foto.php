@@ -86,7 +86,7 @@ if ($data_user) {
               <label class="form-label">Album</label>
               <select class="form-control" name="AlbumID" required>
                 <?php
-                $sql_album = mysqli_query($koneksi, "SELECT * FROM album");
+                $sql_album = mysqli_query($koneksi, "SELECT * FROM album WHERE userID = '$userID'");
                 while ($data_album = mysqli_fetch_array($sql_album)) { ?>
                   <option value="<?php echo $data_album['AlbumID'] ?>">
                     <?php echo $data_album['NamaAlbum'] ?></option>
@@ -152,7 +152,7 @@ if ($data_user) {
           <label class="form-label">Album</label>
           <select class="form-control" name="AlbumID">
             <?php
-            $sql_album = mysqli_query($koneksi, "SELECT * FROM album");
+            $sql_album = mysqli_query($koneksi, "SELECT * FROM album userID = '$userID'");
             while ($data_album = mysqli_fetch_array($sql_album)) {
             ?>
               <option <?php if ($data_album['AlbumID'] == $data['AlbumID']) { ?> selected="selected" <?php } ?> value="<?php echo $data_album['AlbumID'] ?>">
