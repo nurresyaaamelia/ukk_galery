@@ -11,7 +11,7 @@ if (isset($_POST['tambah'])) {
     $Deskripsi = $_POST['deskripsi'];
     $TanggalDibuat = date('Y-m-d');
     $UserId = $_SESSION['userID'];
-    $_SESSION['role'] = 'user'; // Contoh peran, sesuaikan dengan logika aplikasi Anda
+    $_SESSION['role'] = 'user'; 
 
     $sql = mysqli_query($koneksi, "INSERT INTO album (NamaAlbum,Deskripsi,TanggalDibuat,userID) 
             VALUES ('$NamaAlbum','$Deskripsi','$TanggalDibuat','$UserId')");
@@ -20,9 +20,9 @@ if (isset($_POST['tambah'])) {
         if ($_SESSION['role'] === 'admin') {
             header('location:../admin/album.php');
         } elseif ($_SESSION['role'] === 'user') {
-            header('location:../user/album.php'); // Sesuaikan dengan halaman user yang benar
+            header('location:../user/album.php'); 
         } else {
-            // Handle jika peran tidak dikenali, misalnya arahkan ke halaman default
+            
             header('location:../admin/tambahuser.php');
         }
     }
@@ -45,7 +45,7 @@ if (isset($_POST['edit']))
         } elseif ($_SESSION['role'] === 'user') {
             header('location:../user/album.php');
         } else {
-            // Handle jika peran tidak dikenali, misalnya arahkan ke halaman default
+         
             header('location:../admin/tambahuser.php');
         }
     } else {
@@ -65,7 +65,7 @@ if (isset($_POST['hapus'])) {
         if ($_SESSION['role'] === 'admin') {
             header('location:../admin/album.php');
         } elseif ($_SESSION['role'] === 'user') {
-            header('location:../user/album.php'); // Sesuaikan dengan halaman user yang benar
+            header('location:../user/album.php'); 
         }
     } else {
         echo "<script>

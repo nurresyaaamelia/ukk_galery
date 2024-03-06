@@ -3,7 +3,7 @@ session_start();
 include 'koneksi.php';
 
 $Username = $_POST['Username'];
-$Password = md5($_POST['Password']); // Gunakan md5 atau metode hash lainnya untuk membandingkan password
+$Password = md5($_POST['Password']); 
 
 $sql = mysqli_query($koneksi, "SELECT * FROM user WHERE Username='$Username' AND Password='$Password'");
 
@@ -17,7 +17,7 @@ if ($cek > 0) {
     // $_SESSION['role'] = $data['role'];
     $_SESSION['status'] = 'login';
 
-    // Sesuaikan redirect berdasarkan jenis pengguna
+    
     if ($Username === 'admin') {
         header("Location: ../admin/home.php");
     } else {

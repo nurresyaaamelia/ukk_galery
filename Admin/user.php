@@ -2,7 +2,7 @@
 session_start();
 $userID = $_SESSION['userID'];
 
-// Cek apakah pengguna sudah login
+
 if (!isset($_SESSION['status']) || $_SESSION['status'] != 'login') {
   echo "<script>
     alert('Anda belum login!');
@@ -10,19 +10,18 @@ if (!isset($_SESSION['status']) || $_SESSION['status'] != 'login') {
     </script>";
   exit;
 }
-// Termasuk file koneksi
-include_once("../config/koneksi.php");
-$username = "Username"; // Inisialisasi variabel
 
-// Ambil nama pengguna dari database
+include_once("../config/koneksi.php");
+$username = "Username"; 
+
+
 $query_user = mysqli_query($koneksi, "SELECT NamaLengkap FROM user WHERE userID = '$userID'");
 $data_user = mysqli_fetch_array($query_user);
 if ($data_user) {
-  $username = $data_user['NamaLengkap']; // Set variabel jika data ditemukan
+  $username = $data_user['NamaLengkap']; 
 }
 
 
-// Melakukan query untuk mendapatkan data pengguna
 $result = mysqli_query($koneksi, "SELECT * FROM user");
 
 ?>
@@ -144,7 +143,7 @@ $result = mysqli_query($koneksi, "SELECT * FROM user");
     <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../assets/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Menambahkan/ menghapus kelas saat ikon hati disentuh/meninggalkan
+    
     function toggleHeartAnimation(element) {
       element.classList.toggle('heart-move');
     }

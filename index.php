@@ -8,33 +8,32 @@
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <style>
-    /* Gaya untuk warna ikon */
+  
     .fa-heart {
-      /* Sesuaikan warna dengan Instagram */
+    
       color: #ed4956;
-      /* Warna merah Instagram */
-      /* Anda dapat menyesuaikan warna sesuai keinginan */
+    
     }
 
-    /* Tambahkan transisi */
+    
     .card-img-top {
       max-width: 40%;
       height: auto;
       transition: transform 0.3s ease;
-      border: 3px solid #8e44ad; /* Warna border mytcal glory */
-      border-radius: 10px; /* Radius border */
-      background: linear-gradient(to right, #8e44ad, #3498db); /* Gradient background */
-      margin: 0 auto; /* Untuk membuat gambar berada di tengah */
+      border: 3px solid #8e44ad; 
+      border-radius: 10px;
+      background: linear-gradient(to right, #8e44ad, #3498db); 
+      margin: 0 auto; 
     }
 
-    /* Efek scaling saat hover */
+   
     .card-img-top:hover {
       transform: scale(1.1);
-      border-image-source: linear-gradient(to right, #8e44ad, #3498db); /* Gradient border on hover */
-      border-image-slice: 1; /* Slice the border image */
+      border-image-source: linear-gradient(to right, #8e44ad, #3498db); 
+      border-image-slice: 1; 
     }
 
-    /* Tambahkan margin-top pada container carousel */
+    
     #carouselExampleControls {
       margin-top: 20px;
     }
@@ -68,7 +67,7 @@
         while ($data = mysqli_fetch_array($query)) {
           ?>
           <div class="carousel-item <?php echo ($first ? 'active' : ''); ?>">
-            <div class="d-flex justify-content-center"> <!-- Tambahkan container untuk gambar di tengah -->
+            <div class="d-flex justify-content-center">
               <img src="assets/img/<?php echo $data['lokasifile'] ?>" class="d-block card-img-top" alt="<?php echo $data['judulfoto'] ?>"> <!-- Hapus class w-100 dan tambahkan class card-img-top -->
             </div>
             <div class="carousel-caption d-none d-md-block">
@@ -78,12 +77,12 @@
                 $fotoid = $data['fotoid'];
                 $ceksuka = mysqli_query($koneksi, "SELECT * FROM likefoto WHERE fotoid='$fotoid' ");
                 if (mysqli_num_rows($ceksuka) == 1) { ?>
-                  <!-- Ganti kelas ikon -->
+                  
                   <a href="./register.php" type="submit" name="batalsuka">
                     <i class="fas fa-heart "></i>
                   </a>
                 <?php } else { ?>
-                  <!-- Ganti kelas ikon -->
+                  
                   <a href="./register.php" type="submit" name="suka">
                     <i class="far fa-heart "></i>
                   </a>
@@ -122,10 +121,10 @@
   <footer class="d-flex justify-content-center border-top mt-3 bg-light fixed-bottom">
     <p>&copy; Ujikom RPL | Nurresya Amelia</p>
   </footer>
-  <!-- Script JavaScript -->
+ 
   <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
   <script>
-    // Dapat juga menambahkan skrip JavaScript khusus untuk fitur tertentu
+   
   </script>
 </body>
 

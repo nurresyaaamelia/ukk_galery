@@ -2,7 +2,7 @@
 session_start();
 $userID = $_SESSION['userID'];
 
-// Cek apakah pengguna sudah login
+
 if (!isset($_SESSION['status']) || $_SESSION['status'] != 'login') {
   echo "<script>
     alert('Anda belum login!');
@@ -10,15 +10,15 @@ if (!isset($_SESSION['status']) || $_SESSION['status'] != 'login') {
     </script>";
   exit;
 }
-// Termasuk file koneksi
-include_once("../config/koneksi.php");
-$username = "Username"; // Inisialisasi variabel
 
-// Ambil nama pengguna dari database
+include_once("../config/koneksi.php");
+$username = "Username"; 
+
+
 $query_user = mysqli_query($koneksi, "SELECT NamaLengkap FROM user WHERE userID = '$userID'");
 $data_user = mysqli_fetch_array($query_user);
 if ($data_user) {
-  $username = $data_user['NamaLengkap']; // Set variabel jika data ditemukan
+  $username = $data_user['NamaLengkap']; 
 
 
   $sql = "SELECT * FROM album";
@@ -50,15 +50,15 @@ if ($data_user) {
     <div class="collapse navbar-collapse mt-2" id="navbarNavAltMarkup">
       <div class="navbar-nav me-auto">
         <a href="home.php" class="btn btn-outline-primary">Home</a>
-        <span style="margin-right: 10px;"></span> <!-- Jarak -->
+        <span style="margin-right: 10px;"></span> 
         <a href="album.php" class="btn btn-outline-primary">Data Album</a>
-        <span style="margin-right: 10px;"></span> <!-- Jarak -->
+        <span style="margin-right: 10px;"></span> 
         <a href="foto.php" class="btn btn-outline-primary">Data Foto</a>
 
       </div>
 
       <div class="navbar-nav ms-auto">
-        <!-- Tambahkan dropdown untuk nama pengguna -->
+       
     <div class="dropdown">
             <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fas fa-user"></i> <?php echo $username; ?>
@@ -191,14 +191,14 @@ if ($data_user) {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="../config/aksi_foto.php" method="POST"> <!-- Tambahkan form ini -->
+                <form action="../config/aksi_foto.php" method="POST"> 
                     <input type="hidden" name="fotoid" value="<?php echo $data['fotoid'] ?>">
                     Apakah Anda Yakin Akan Menghapus Data <strong><?php echo $data['judulfoto'] ?></strong>?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                 <button type="submit" name="hapus" class="btn btn-primary">Hapus Data</button>
-                </form> <!-- Tutup form -->
+                </form> 
             </div>
         </div>
     </div>
@@ -224,7 +224,7 @@ if ($data_user) {
   <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../assets/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Menambahkan/ menghapus kelas saat ikon hati disentuh/meninggalkan
+   
     function toggleHeartAnimation(element) {
       element.classList.toggle('heart-move');
     }

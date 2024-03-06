@@ -9,9 +9,9 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg"> <!-- Menggunakan kelas bg-dark untuk mengubah warna navbar -->
+  <nav class="navbar navbar-expand-lg"> 
     <div class="container">
-      <a class="navbar-brand text-black" href="index.php">Website Galery Foto</a> <!-- Menambahkan kelas text-white untuk mengubah warna teks menjadi putih -->
+      <a class="navbar-brand text-black" href="index.php">Website Galery Foto</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

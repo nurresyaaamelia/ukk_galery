@@ -2,7 +2,7 @@
 session_start();
 $userID = $_SESSION['userID'];
 
-// Cek apakah pengguna sudah login
+
 if (!isset($_SESSION['status']) || $_SESSION['status'] != 'login') {
   echo "<script>
     alert('Anda belum login!');
@@ -10,15 +10,15 @@ if (!isset($_SESSION['status']) || $_SESSION['status'] != 'login') {
     </script>";
   exit;
 }
-// Termasuk file koneksi
-include_once("../config/koneksi.php");
-$username = "Username"; // Inisialisasi variabel
 
-// Ambil nama pengguna dari database
+include_once("../config/koneksi.php");
+$username = "Username"; 
+
+
 $query_user = mysqli_query($koneksi, "SELECT NamaLengkap FROM user WHERE userID = '$userID'");
 $data_user = mysqli_fetch_array($query_user);
 if ($data_user) {
-  $username = $data_user['NamaLengkap']; // Set variabel jika data ditemukan
+  $username = $data_user['NamaLengkap'];
 }
 ?>
 
@@ -32,37 +32,36 @@ if ($data_user) {
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <style>
-    /* Gaya untuk warna ikon */
+  
     .fa-heart {
-      /* Sesuaikan warna dengan Instagram */
+     
       color: #ed4956;
-      /* Warna merah Instagram */
-      /* Anda dapat menyesuaikan warna sesuai keinginan */
+    
     }
 
-    /* Tambahkan transisi */
+  
     .card-img-top {
       max-width: 100%;
       height: auto;
       transition: transform 0.3s ease;
       border: 3px solid #8e44ad;
-      /* Warna border mytcal glory */
+   
       border-radius: 10px;
-      /* Radius border */
+     
       background: linear-gradient(to right, #8e44ad, #3498db);
-      /* Gradient background */
+      
     }
 
-    /* Efek scaling saat hover */
+  
     .card-img-top:hover {
       transform: scale(1.1);
       border-image-source: linear-gradient(to right, #8e44ad, #3498db);
-      /* Gradient border on hover */
+      
       border-image-slice: 1;
-      /* Slice the border image */
+    
     }
 
-    /* Animasi gerakan ikon hati saat disentuh */
+    
     .heart-move {
       animation: moveHeart 0.3s ease;
     }
@@ -94,22 +93,22 @@ if ($data_user) {
       <div class="collapse navbar-collapse mt-2" id="navbarNavAltMarkup">
         <div class="navbar-nav me-auto">
           <a href="home.php" class="btn btn-outline-primary">Home</a>
-          <span style="margin-right: 10px;"></span> <!-- Jarak -->
+          <span style="margin-right: 10px;"></span> 
           <a href="album.php" class="btn btn-outline-primary">Data Album</a>
-          <span style="margin-right: 10px;"></span> <!-- Jarak -->
+          <span style="margin-right: 10px;"></span> 
           <a href="foto.php" class="btn btn-outline-primary">Data Foto</a>
 
         </div>
 
         <div class="navbar-nav ms-auto">
-          <!-- Tambahkan dropdown untuk nama pengguna -->
+          
           <div class="dropdown">
             <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fas fa-user"></i> <?php echo $username; ?>
             </button>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
               <li><a class="dropdown-item" href="../config/aksi_logout.php">Keluar</a></li>
-              <!-- Ini adalah opsi untuk laporan -->
+              
             </ul>
           </div> </div>
         </div>
@@ -117,8 +116,6 @@ if ($data_user) {
   </nav>
   <!-- Akhir Navbar -->
 
-  <!-- Letakkan form pencarian di bagian atas halaman -->
-  <!-- Letakkan form pencarian di bagian atas halaman -->
   <div class="d-flex justify-content-end">
     <form action="" method="GET" class="mb-3 mr-3 ml-auto" style="margin: 0px 150px 0px 0px;">
       <div class="input-group">
@@ -136,7 +133,7 @@ if ($data_user) {
   <div class="container mt-2">
     <div class="row">
       <?php
-      // Proses pencarian
+   
       if (isset($_GET['keyword'])) {
         $keyword = $_GET['keyword'];
         $query = mysqli_query($koneksi, "SELECT * FROM foto 
@@ -149,7 +146,7 @@ if ($data_user) {
                                          INNER JOIN album ON foto.AlbumID=album.AlbumID");
       }
 
-      $count = 0; // Inisialisasi variabel untuk menghitung jumlah foto
+      $count = 0;
       while ($data = mysqli_fetch_array($query)) {
       ?>
         <?php if ($count % 8 == 0) : ?>
@@ -160,11 +157,11 @@ if ($data_user) {
       <div class="card mb-2">
         <img src="../assets/img/<?php echo $data['lokasifile'] ?>" class="card-img-top" title="<?php echo $data['judulfoto'] ?>" style="max-height: 300px;">
         <div class="card-footer text-center">
-          <!-- Tombol Laporan dengan Tanda Seru -->
+         
           <button class="btn -outline-danger" data-bs-toggle="modal" data-bs-target="#laporModal<?php echo $data['fotoid']; ?>">
             <i class="fas fa-exclamation-triangle"></i>
           </button>
-          <!-- Modal Pelaporan -->
+         
           <div class="modal fade" id="laporModal<?php echo $data['fotoid']; ?>" tabindex="-1" aria-labelledby="laporModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -192,12 +189,12 @@ if ($data_user) {
 
           $ceksuka = mysqli_query($koneksi, "SELECT * FROM likefoto WHERE fotoid='$fotoid' AND userID='$userID'");
           if (mysqli_num_rows($ceksuka) == 1) { ?>
-            <!-- Ganti kelas ikon -->
+          
             <a href="../config/proses_like.php?fotoid=<?php echo $data['fotoid'] ?>" type="submit" name="batalsuka" onmouseover="toggleHeartAnimation(this)" onmouseout="toggleHeartAnimation(this)">
               <i class="fas fa-heart heart-move"></i>
             </a>
           <?php } else { ?>
-            <!-- Ganti kelas ikon -->
+           
             <a href="../config/proses_like.php?fotoid=<?php echo $data['fotoid'] ?>" type="submit" name="suka" onmouseover="toggleHeartAnimation(this)" onmouseout="toggleHeartAnimation(this)">
               <i class="far fa-heart heart-move"></i>
             </a>
@@ -293,18 +290,18 @@ if ($data_user) {
       </div>
     </div>
   <?php
-        $count++; // Tambahkan 1 ke variabel hitung setiap kali loop
+        $count++; 
       } ?>
     </div>
   </div>
   <footer class="d-flex justify-content-center border-top mt-3 bg-light fixed-bottom">
     <p>&copy; Ujikom RPL | Nurresya Amelia</p>
   </footer>
-  <!-- Script JavaScript -->
+ 
   <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../assets/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Menambahkan/ menghapus kelas saat ikon hati disentuh/meninggalkan
+   
     function toggleHeartAnimation(element) {
       element.classList.toggle('heart-move');
     }

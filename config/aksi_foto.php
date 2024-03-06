@@ -23,7 +23,7 @@ if (isset($_POST['tambah'])) {
         } elseif ($_SESSION['role'] === 'user') {
             header('location:../user/foto.php');
         } else {
-            // Jika peran tidak dikenali, arahkan ke halaman default
+            
             header('location:../admin/foto.php');
         }
     }
@@ -61,7 +61,7 @@ if ($sql) {
     } elseif ($_SESSION['role'] === 'user') {
         header('location:../user/foto.php');
     } else {
-        // Jika peran tidak dikenali, arahkan ke halaman default
+       
         header('location:../admin/foto.php');
     }
 } else {
@@ -87,7 +87,7 @@ if ($sql) {
     } elseif ($_SESSION['role'] === 'user') {
         header('location:../user/foto.php');
     } else {
-        // Jika peran tidak dikenali, arahkan ke halaman default
+        
         header('location:../admin/foto.php');
     }
 } else {

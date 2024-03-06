@@ -2,7 +2,7 @@
 session_start();
 include_once("koneksi.php");
 
-// Cek apakah pengguna sudah login
+
 if (!isset($_SESSION['status']) || $_SESSION['status'] != 'login') {
     echo "<script>
         alert('Anda belum login!');
@@ -11,12 +11,12 @@ if (!isset($_SESSION['status']) || $_SESSION['status'] != 'login') {
     exit;
 }
 
-// Ambil ID komentar dari URL
+
 $id = $_POST['id'];
 $fotoid = $_POST['fotoid'];
 $userID = $_SESSION['userID'];
 
-// Hapus komentar dari database
+
 $query = mysqli_query($koneksi, "DELETE FROM komentar WHERE komentarid='$id' ");
 
 if ($query) {

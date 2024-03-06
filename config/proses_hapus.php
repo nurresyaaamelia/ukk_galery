@@ -11,12 +11,12 @@ if ($_SESSION['status'] != 'login') {
     if (isset($_POST['hapus'])) {
         $albumid = $_POST['albumid'];
 
-        // Hapus album dari database
+       
         $query = "DELETE FROM album WHERE AlbumID = '$albumid'";
         $result = mysqli_query($koneksi, $query);
 
         if ($result) {
-            // Jika berhasil dihapus, kembalikan ke halaman album dengan pesan sukses
+          
             if( $_SESSION['Username'] === "admin"){
                 echo "<script>
                 alert('Album berhasil dihapus');
@@ -30,7 +30,7 @@ if ($_SESSION['status'] != 'login') {
             }
             
         } else {
-            // Jika gagal, kembalikan ke halaman album dengan pesan gagal
+           
             echo "<script>
             alert('Gagal menghapus album');
             location.href='../config/album.php';

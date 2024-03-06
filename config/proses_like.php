@@ -17,7 +17,7 @@ if (mysqli_num_rows($ceksuka) == 1) {
     $query = mysqli_query($koneksi, "INSERT INTO likefoto VALUES('','$fotoid','$userID','$tanggallike')");
 }
 
-// Redirect back to the page where the action was performed
+
 header("Location: {$_SERVER['HTTP_REFERER']}");
 exit();
 ?>

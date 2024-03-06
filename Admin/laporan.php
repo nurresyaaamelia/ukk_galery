@@ -1,26 +1,26 @@
 <?php
-// Koneksi ke database
-$servername = "localhost";
-$username_db = "root"; // Ganti dengan username MySQL Anda
-$password_db = ""; // Ganti dengan password MySQL Anda
-$database = "db_galery"; // Ganti dengan nama database Anda
 
-// Buat koneksi
+$servername = "localhost";
+$username_db = "root"; 
+$password_db = ""; 
+$database = "db_galery"; 
+
+
 $conn = new mysqli($servername, $username_db, $password_db, $database);
 
-// Periksa koneksi
+
 if ($conn->connect_error) {
     die("Koneksi gagal: " . $conn->connect_error);
 }
 
-// Query SQL untuk mengambil data report dan foto
+
 $sql = "SELECT r.fotoid, r.Username, r.reason, r.TanggalLapor, f.lokasifile
         FROM report r
         JOIN foto f ON r.fotoid = f.fotoid";
 
 $result = $conn->query($sql);
 
-$username = "admin"; // Inisialisasi variabel username
+$username = "admin"; 
 ?>
 
 <!DOCTYPE html>
@@ -42,15 +42,15 @@ $username = "admin"; // Inisialisasi variabel username
     <div class="collapse navbar-collapse mt-2"  id="navbarNavAltMarkup">
       <div class="navbar-nav me-auto">
         <a href="home.php" class="btn btn-outline-primary">Home</a>
-        <span style="margin-right: 10px;"></span> <!-- Jarak -->
+        <span style="margin-right: 10px;"></span> 
         <a href="album.php" class="btn btn-outline-primary">Data Album</a>
-        <span style="margin-right: 10px;"></span> <!-- Jarak -->
+        <span style="margin-right: 10px;"></span> 
         <a href="foto.php" class="btn btn-outline-primary">Data Foto</a>
        
       </div>
 
       <div class="navbar-nav ms-auto">
-          <!-- Tambahkan dropdown untuk nama pengguna -->
+         
           <div class="dropdown">
               <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                   <i class="fas fa-user"></i> <?php echo $username; ?>
@@ -58,7 +58,7 @@ $username = "admin"; // Inisialisasi variabel username
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                   <li><a class="dropdown-item" href="../config/aksi_logout.php">Keluar</a></li>
                   <li><a class="dropdown-item" href="laporan.php">Laporan</a></li>
-                  <li><a class="dropdown-item" href="user.php">Data User</a></li> <!-- Ini adalah opsi untuk laporan -->
+                  <li><a class="dropdown-item" href="user.php">Data User</a></li> 
               </ul>
           </div>
           
@@ -80,7 +80,7 @@ $username = "admin"; // Inisialisasi variabel username
                     <th>Reason</th>
                     <th>Tanggal Lapor</th>
                     <th>Foto</th>
-                    <th>Aksi</th> <!-- Kolom baru untuk tombol hapus -->
+                    <th>Aksi</th> 
                 </tr>
                 </thead>
                 <tbody>
@@ -120,16 +120,16 @@ $username = "admin"; // Inisialisasi variabel username
 <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../assets/js/bootstrap.bundle.min.js"></script>
 <script>
-    // Fungsi untuk menghapus foto dan data dari database
+   
     function hapusFoto(fotoid, lokasifile) {
         if (confirm("Apakah Anda yakin ingin menghapus foto ini?")) {
-            // Panggil skrip PHP untuk menghapus foto dan data dari database
+         
             window.location.href = "../config/hapus_foto.php?fotoid=" + fotoid + "&lokasifile=" + lokasifile;
         }
     }
 </script>
 <?php
-// Tutup koneksi
+
 $conn->close();
 ?>
 </body>

@@ -2,7 +2,7 @@
 session_start();
 $userID = $_SESSION['userID'];
 
-// Cek apakah pengguna sudah login
+
 if (!isset($_SESSION['status']) || $_SESSION['status'] != 'login') {
   echo "<script>
     alert('Anda belum login!');
@@ -10,15 +10,15 @@ if (!isset($_SESSION['status']) || $_SESSION['status'] != 'login') {
     </script>";
   exit;
 }
-// Termasuk file koneksi
-include_once("../config/koneksi.php");
-$username = "Username"; // Inisialisasi variabel
 
-// Ambil nama pengguna dari database
+include_once("../config/koneksi.php");
+$username = "Username"; 
+
+
 $query_user = mysqli_query($koneksi, "SELECT NamaLengkap FROM user WHERE userID = '$userID'");
 $data_user = mysqli_fetch_array($query_user);
 if ($data_user) {
-  $username = $data_user['NamaLengkap']; // Set variabel jika data ditemukan
+  $username = $data_user['NamaLengkap']; 
 }
 
 
@@ -42,17 +42,17 @@ if (isset($_GET['AlbumID'])) {
         .card-img-top {
             max-width: 100%;
             height: auto;
-            border: 3px solid #8e44ad; /* Warna border mytcal glory */
-            border-radius: 10px; /* Radius border */
-            background: linear-gradient(to right, #8e44ad, #3498db); /* Gradient background */
-            transition: transform 0.3s ease; /* Transisi untuk efek scaling */
+            border: 3px solid #8e44ad; 
+            border-radius: 10px; 
+            background: linear-gradient(to right, #8e44ad, #3498db); 
+            transition: transform 0.3s ease; 
         }
 
-        /* Efek scaling saat hover */
+       
         .card-img-top:hover {
             transform: scale(1.1);
-            border-image-source: linear-gradient(to right, #8e44ad, #3498db); /* Gradient border on hover */
-            border-image-slice: 1; /* Slice the border image */
+            border-image-source: linear-gradient(to right, #8e44ad, #3498db); 
+            border-image-slice: 1; 
         }
 
         .card {
@@ -68,9 +68,9 @@ if (isset($_GET['AlbumID'])) {
         }
 
         .card-title, .card-text {
-            font-size: 16px; /* Ukuran font judul dan deskripsi */
-            margin-bottom: 5px; /* Margin bawah judul dan deskripsi */
-            text-align: center; /* Pusatkan judul dan deskripsi */
+            font-size: 16px; 
+            margin-bottom: 5px; 
+            text-align: center; 
         }
 
         .card-content {
@@ -90,15 +90,15 @@ if (isset($_GET['AlbumID'])) {
     <div class="collapse navbar-collapse mt-2" id="navbarNavAltMarkup">
       <div class="navbar-nav me-auto">
         <a href="home.php" class="btn btn-outline-primary">Home</a>
-        <span style="margin-right: 10px;"></span> <!-- Jarak -->
+        <span style="margin-right: 10px;"></span> 
         <a href="album.php" class="btn btn-outline-primary">Data Album</a>
-        <span style="margin-right: 10px;"></span> <!-- Jarak -->
+        <span style="margin-right: 10px;"></span> 
         <a href="foto.php" class="btn btn-outline-primary">Data Foto</a>
     
       </div>
 
       <div class="navbar-nav ms-auto">
-        <!-- Tambahkan dropdown untuk nama pengguna -->
+        
     <div class="dropdown">
             <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fas fa-user"></i> <?php echo $username; ?>
@@ -128,7 +128,7 @@ if (isset($_GET['AlbumID'])) {
                         <div class="card mb-4">
                             <img src="../assets/img/<?php echo $row_foto['lokasifile']; ?>" class="card-img-top" alt="Foto Album">
                             <div class="card-body card-content">
-                                <h4 class="card-title"><?php echo $row_foto['judulfoto']; ?></h4> <!-- Judul foto -->
+                                <h4 class="card-title"><?php echo $row_foto['judulfoto']; ?></h4> 
                                 <p class="card-text"><?php echo $row_foto['deskripsifoto']; ?></p>
                             </div>
                         </div>
@@ -150,7 +150,7 @@ if (isset($_GET['AlbumID'])) {
     <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../assets/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Menambahkan/ menghapus kelas saat ikon hati disentuh/meninggalkan
+   
     function toggleHeartAnimation(element) {
       element.classList.toggle('heart-move');
     }
