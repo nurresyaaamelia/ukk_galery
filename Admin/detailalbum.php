@@ -111,6 +111,7 @@ if (isset($_GET['AlbumID'])) {
         <li><a class="dropdown-item" href="../config/aksi_logout.php">Keluar</a></li>
         <li><a class="dropdown-item" href="laporan.php">Laporan</a></li>
         <li><a class="dropdown-item" href="user.php">Data User</a></li> 
+        <li><a class="dropdown-item" href="sampah.php">sampah </a></li>
     </ul>
 </div>
       </div>

@@ -67,6 +67,7 @@ if ($data_user) {
             </button>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
               <li><a class="dropdown-item" href="../config/aksi_logout.php">Keluar</a></li>
+              <li><a class="dropdown-item" href="sampah.php">sampah </a></li>
             </ul>
           </div>
       </div>

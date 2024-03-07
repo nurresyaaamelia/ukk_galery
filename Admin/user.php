@@ -50,6 +50,7 @@ $result = mysqli_query($koneksi, "SELECT * FROM user");
         <a href="album.php" class="btn btn-outline-primary">Data Album</a>
         <span style="margin-right: 10px;"></span> <!-- Jarak -->
         <a href="foto.php" class="btn btn-outline-primary">Data Foto</a>
+        
        
       </div>
 
@@ -62,7 +63,8 @@ $result = mysqli_query($koneksi, "SELECT * FROM user");
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                   <li><a class="dropdown-item" href="../config/aksi_logout.php">Keluar</a></li>
                   <li><a class="dropdown-item" href="laporan.php">Laporan</a></li>
-                  <li><a class="dropdown-item" href="user.php">Data User</a></li> <!-- Ini adalah opsi untuk laporan -->
+                  <li><a class="dropdown-item" href="user.php">Data User</a></li>
+                  <li><a class="dropdown-item" href="sampah.php">sampah </a></li> <!-- Ini adalah opsi untuk laporan -->
               </ul>
           </div>
           

@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 29, 2024 at 09:49 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.1
+-- Waktu pembuatan: 07 Mar 2024 pada 02.31
+-- Versi server: 10.4.21-MariaDB
+-- Versi PHP: 7.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `album`
+-- Struktur dari tabel `album`
 --
 
 CREATE TABLE `album` (
@@ -37,16 +36,18 @@ CREATE TABLE `album` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `album`
+-- Dumping data untuk tabel `album`
 --
 
 INSERT INTO `album` (`AlbumID`, `NamaAlbum`, `Deskripsi`, `TanggalDibuat`, `userID`) VALUES
-(44, 'tanaman', 'dshr', '2024-02-29', 26);
+(57, 'moments ', 'bersama teman teman', '2024-03-06', 25),
+(58, 'olahraga', 'bersama tim', '2024-03-06', 27),
+(59, 'class meeting', 'pertandingan', '2024-03-06', 28);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `foto`
+-- Struktur dari tabel `foto`
 --
 
 CREATE TABLE `foto` (
@@ -60,16 +61,23 @@ CREATE TABLE `foto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `foto`
+-- Dumping data untuk tabel `foto`
 --
 
 INSERT INTO `foto` (`fotoid`, `judulfoto`, `deskripsifoto`, `tanggalunggah`, `lokasifile`, `AlbumID`, `userID`) VALUES
-(77, 'teh', 'theah', '2024-02-29', '1317858503-Shop Houseplants _ Indoor Plants, Delivered To You _ The Sill.jpg', 44, 26);
+(92, 'voly', 'tournamenn', '2024-03-06', '1612498973-WhatsApp Image 2024-03-04 at 11.50.42.jpeg', 58, 27),
+(93, 'futsal', 'juara 3', '2024-03-06', '585443102-WhatsApp Image 2024-03-04 at 11.49.18 (1).jpeg', 59, 28),
+(94, 'futsal', 'juara 3', '2024-03-06', '838286440-WhatsApp Image 2024-03-04 at 11.49.19.jpeg', 59, 28),
+(95, 'futsal', 'juara 3', '2024-03-06', '1345761345-WhatsApp Image 2024-03-04 at 11.49.18.jpeg', 59, 28),
+(96, 'futsal', 'juara 3', '2024-03-06', '1695973298-WhatsApp Image 2024-03-04 at 11.49.19 (1).jpeg', 59, 28),
+(98, 'voly', 'tournamen', '2024-03-06', '437328303-WhatsApp Image 2024-03-04 at 11.50.41.jpeg', 58, 27),
+(100, 'maulid nabi', '-', '2024-03-06', '1876829645-WhatsApp Image 2024-03-06 at 06.44.29.jpeg', 57, 25),
+(101, 'maulid nabi', '-', '2024-03-06', '269670590-WhatsApp Image 2024-03-06 at 06.44.29 (1).jpeg', 58, 27);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `komentar`
+-- Struktur dari tabel `komentar`
 --
 
 CREATE TABLE `komentar` (
@@ -81,7 +89,7 @@ CREATE TABLE `komentar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `komentar`
+-- Dumping data untuk tabel `komentar`
 --
 
 INSERT INTO `komentar` (`komentarid`, `fotoid`, `userID`, `isikomentar`, `tanggalunggah`) VALUES
@@ -95,12 +103,23 @@ INSERT INTO `komentar` (`komentarid`, `fotoid`, `userID`, `isikomentar`, `tangga
 (8, 32, 0, 'bagus', '2024-02-20'),
 (9, 33, 0, 'hai', '2024-02-20'),
 (10, 47, 12, 'sangat cantik', '2024-02-22'),
-(27, 76, 25, 'test', '0000-00-00');
+(27, 76, 25, 'test', '0000-00-00'),
+(35, 78, 27, 'p', '0000-00-00'),
+(36, 78, 25, 'p', '0000-00-00'),
+(37, 79, 25, 'p', '0000-00-00'),
+(38, 86, 27, 'test', '0000-00-00'),
+(41, 87, 27, 'test', '0000-00-00'),
+(43, 87, 25, 'p', '0000-00-00'),
+(44, 89, 27, 'wah keren sekali', '0000-00-00'),
+(45, 89, 25, 'oke juga', '0000-00-00'),
+(46, 89, 28, 'ada pohon rambutan', '0000-00-00'),
+(47, 92, 25, 'wah', '0000-00-00'),
+(48, 92, 27, 'wah keren sekali', '0000-00-00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `likefoto`
+-- Struktur dari tabel `likefoto`
 --
 
 CREATE TABLE `likefoto` (
@@ -111,7 +130,7 @@ CREATE TABLE `likefoto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `likefoto`
+-- Dumping data untuk tabel `likefoto`
 --
 
 INSERT INTO `likefoto` (`likeid`, `fotoid`, `userID`, `tanggallike`) VALUES
@@ -168,26 +187,57 @@ INSERT INTO `likefoto` (`likeid`, `fotoid`, `userID`, `tanggallike`) VALUES
 (192, 73, 11, '2024-02-28'),
 (193, 61, 11, '2024-02-29'),
 (194, 65, 11, '2024-02-29'),
-(195, 76, 25, '2024-02-29');
+(195, 76, 25, '2024-02-29'),
+(196, 77, 25, '2024-02-29'),
+(218, 79, 27, '2024-03-01'),
+(219, 78, 27, '2024-03-01'),
+(222, 79, 25, '2024-03-01'),
+(225, 78, 25, '2024-03-02'),
+(229, 89, 27, '2024-03-06'),
+(230, 89, 25, '2024-03-06'),
+(232, 92, 27, '2024-03-06'),
+(233, 93, 25, '2024-03-06'),
+(234, 92, 25, '2024-03-06');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `report`
+-- Struktur dari tabel `report`
 --
 
 CREATE TABLE `report` (
-  `report_id` int(11) NOT NULL,
-  `FotoID` int(11) NOT NULL,
-  `Username` int(11) NOT NULL,
+  `fotoid` int(11) NOT NULL,
+  `Username` varchar(255) NOT NULL,
   `reason` text NOT NULL,
   `TanggalLapor` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `report`
+--
+
+INSERT INTO `report` (`fotoid`, `Username`, `reason`, `TanggalLapor`) VALUES
+(91, 'amel', 'spam', '2024-03-06'),
+(92, 'amel', 'spam', '2024-03-06'),
+(93, 'amel', 'spam', '2024-03-06');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `sampah`
+--
+
+CREATE TABLE `sampah` (
+  `userID` int(11) NOT NULL,
+  `fotoid` int(11) NOT NULL,
+  `Username` varchar(255) NOT NULL,
+  `tanggalhapus` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -201,26 +251,29 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`userID`, `Username`, `Password`, `Email`, `NamaLengkap`, `Alamat`, `Role`) VALUES
-(25, 'admin', '202cb962ac59075b964b07152d234b70', 'admin@gmail.com', 'admin', 'Banjar', 'user'),
-(26, 'user', '4297f44b13955235245b2497399d7a93', 'user@gmail.com', 'user', 'Sukarame', 'user');
+(25, 'admin', '202cb962ac59075b964b07152d234b70', 'admin@gmail.com', 'admin', 'Banjar', 'Admin'),
+(27, 'amel', 'caf1a3dfb505ffed0d024130f58c5cfa', 'amel@gmail.com', 'amel', 'banjar', 'user'),
+(28, 'intan', '81dc9bdb52d04dc20036dbd8313ed055', 'intan@gmail.com', 'intan', 'banjar kolot', 'user'),
+(29, 'mela', '827ccb0eea8a706c4c34a16891f84e7b', 'mela@gmail.com', 'mela', 'mergo', 'user'),
+(30, 'jirah', 'e10adc3949ba59abbe56e057f20f883e', 'jirah@gmail.com', 'jirah', 'dobo', 'user');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `album`
+-- Indeks untuk tabel `album`
 --
 ALTER TABLE `album`
   ADD PRIMARY KEY (`AlbumID`),
   ADD KEY `userID` (`userID`);
 
 --
--- Indexes for table `foto`
+-- Indeks untuk tabel `foto`
 --
 ALTER TABLE `foto`
   ADD PRIMARY KEY (`fotoid`),
@@ -228,7 +281,7 @@ ALTER TABLE `foto`
   ADD KEY `AlbumID` (`AlbumID`);
 
 --
--- Indexes for table `komentar`
+-- Indeks untuk tabel `komentar`
 --
 ALTER TABLE `komentar`
   ADD PRIMARY KEY (`komentarid`),
@@ -236,7 +289,7 @@ ALTER TABLE `komentar`
   ADD KEY `userID` (`userID`);
 
 --
--- Indexes for table `likefoto`
+-- Indeks untuk tabel `likefoto`
 --
 ALTER TABLE `likefoto`
   ADD PRIMARY KEY (`likeid`),
@@ -244,57 +297,70 @@ ALTER TABLE `likefoto`
   ADD KEY `userID` (`userID`);
 
 --
--- Indexes for table `report`
+-- Indeks untuk tabel `report`
 --
 ALTER TABLE `report`
-  ADD PRIMARY KEY (`report_id`),
-  ADD KEY `FotoID` (`FotoID`);
+  ADD PRIMARY KEY (`fotoid`),
+  ADD KEY `FotoID` (`fotoid`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `sampah`
+--
+ALTER TABLE `sampah`
+  ADD PRIMARY KEY (`userID`),
+  ADD KEY `fotoid` (`fotoid`);
+
+--
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`userID`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `album`
+-- AUTO_INCREMENT untuk tabel `album`
 --
 ALTER TABLE `album`
-  MODIFY `AlbumID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `AlbumID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
--- AUTO_INCREMENT for table `foto`
+-- AUTO_INCREMENT untuk tabel `foto`
 --
 ALTER TABLE `foto`
-  MODIFY `fotoid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `fotoid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
--- AUTO_INCREMENT for table `komentar`
+-- AUTO_INCREMENT untuk tabel `komentar`
 --
 ALTER TABLE `komentar`
-  MODIFY `komentarid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `komentarid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
--- AUTO_INCREMENT for table `likefoto`
+-- AUTO_INCREMENT untuk tabel `likefoto`
 --
 ALTER TABLE `likefoto`
-  MODIFY `likeid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=196;
+  MODIFY `likeid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=235;
 
 --
--- AUTO_INCREMENT for table `report`
+-- AUTO_INCREMENT untuk tabel `report`
 --
 ALTER TABLE `report`
-  MODIFY `report_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `fotoid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `sampah`
+--
+ALTER TABLE `sampah`
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
